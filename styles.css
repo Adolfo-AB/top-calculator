@@ -1,0 +1,137 @@
+:root {
+    --primary-color: #1c51ff;
+    --primary-color-shadow: #0832be;
+    --primary-color-buttons: #fcfcfc;
+    --primary-color-buttons-shadow: #c0c0c0;
+    --accent-color-buttons: #ff3939;
+    --accent-color-buttons-shadow: #b40000;
+    --equal-color-buttons: #ffe608;
+    --equal-color-buttons-shadow: #f3bd0b;
+    --background-color: #fcfcfc;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+p {
+    margin: 0px;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+
+    width: 400px;
+    height: 500px;
+    padding: 30px;
+    border-radius: 30px;
+
+    background-color: var(--primary-color);
+    box-shadow: 0px 10px 0 var(--primary-color-shadow);
+}
+
+#display {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    justify-content:end;
+    align-items: flex-end;
+    overflow: hidden;
+    
+    width: 100%;
+    height: 200px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+
+    background-color: var(--background-color);
+}
+
+#display-upper, #display-lower {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'Courier New', sans-serif;
+}
+
+#display-upper {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#display-lower {
+    font-size: 60px;
+    margin: 0px;
+}
+
+#button-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    height: 100%;
+    gap: 15px;
+    border-radius: 15px;
+  }
+
+.normal-button, .accent-button, .equal-button {
+    appearance: none;
+    border: none;
+    border-radius: 15px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+
+.normal-button:active .normal-span, .accent-button:active .accent-span, .equal-button:active .equal-span {
+    transform: translateY(-2px);
+}
+
+.normal-button {
+    background: var(--primary-color-buttons-shadow);
+}
+
+.accent-button {
+    background: var(--accent-color-buttons-shadow);
+}
+
+.equal-button {
+    background: var(--equal-color-buttons-shadow);
+    grid-column: 3 / span 3;
+}
+
+.normal-span, .accent-span, .equal-span {
+    display: flex; /* Add flex display */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%;
+    border-radius: 15px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    font-weight: normal;
+    transform: translateY(-6px);
+}
+
+.normal-span {
+    background: var(--primary-color-buttons);
+    color: var(--primary-color);
+}
+
+.accent-span {
+    background-color: var(--accent-color-buttons);
+    color: var(--background-color);
+}
+
+.equal-span {
+    background-color: var(--equal-color-buttons);
+    color: var(--primary-color);
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+  }
