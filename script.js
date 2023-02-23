@@ -68,14 +68,14 @@ function executeOperandLogic(span) {
         clearMainDisplay();
     }
 
-    updateMainDisplayAdd(result);
+    updateMainDisplayAdd(result.toString());
 }
 
 function executeOperatorLogic(span) {
     if (!afterOperator) {
         operator = span.textContent;
-        updateSecondaryDisplay(firstOperand);
-        updateSecondaryDisplay(operator);
+        updateSecondaryDisplay(firstOperand.toString());
+        updateSecondaryDisplay(operator.toString());
         afterOperator = true;
     } else {
         if (operator === "") {
@@ -89,11 +89,11 @@ function executeOperatorLogic(span) {
         firstOperand = operate(operator, parseFloat(firstOperand), parseFloat(secondOperand));
         secondOperand = "";
         clearMainDisplay();
-        updateMainDisplayAdd(firstOperand);
+        updateMainDisplayAdd(firstOperand.toString());
         clearSecondaryDisplay();
-        updateSecondaryDisplay(firstOperand);
+        updateSecondaryDisplay(firstOperand.toString());
         operator = span.textContent;
-        updateSecondaryDisplay(operator);
+        updateSecondaryDisplay(operator.toString());
     }
 }
 
@@ -102,14 +102,14 @@ function executeEqualLogic(span) {
         return;
     }
     clearSecondaryDisplay();
-    updateSecondaryDisplay(firstOperand);
-    updateSecondaryDisplay(operator);
-    updateSecondaryDisplay(secondOperand);
-    updateSecondaryDisplay(span.textContent);
+    updateSecondaryDisplay(firstOperand.toString());
+    updateSecondaryDisplay(operator.toString());
+    updateSecondaryDisplay(secondOperand.toString());
+    updateSecondaryDisplay(span.textContent.toString());
 
     firstOperand = operate(operator, parseFloat(firstOperand), parseFloat(secondOperand));
     clearMainDisplay();
-    updateMainDisplayAdd(firstOperand);
+    updateMainDisplayAdd(firstOperand.toString());
     secondOperand = "";
     operator = "";
 }
