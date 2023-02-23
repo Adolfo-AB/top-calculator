@@ -134,4 +134,11 @@ p {
 #footer {
     position: absolute;
     bottom: 0;
+    margin-bottom: 10px;
+    font-family: 'Courier New', sans-serif;
+    color: var(--primary-color-buttons-shadow);
+  }
+
+  #footer>span {
+    color: var(--primary-color)
   }
