@@ -115,7 +115,12 @@ function executeEqualLogic(span) {
 }
 
 function updateMainDisplayAdd(str) {
-    mainDisplay.textContent = str;
+    if (str.length <= MAX_CHARACTERS) {
+        mainDisplay.textContent = str;
+    }
+    else {
+        mainDisplay.textContent = "OutOfRange";
+    }
 }
 
 function updateMainDisplayDelete() {
@@ -133,6 +138,10 @@ function clearMainDisplay() {
 
 function updateSecondaryDisplay(str) {
     secondaryDisplay.textContent = `${secondaryDisplay.textContent} ${str}`;
+
+    if (secondaryDisplay.textContent.length > MAX_CHARACTERS*2) {
+        secondaryDisplay.textContent = "OutOfRange";
+    }
 }
 
 function clearSecondaryDisplay() {
